@@ -1,7 +1,7 @@
 {
   "name": "cutstruct-aptitude-test-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cutstruct assessment  - API Infrastructure to handle project management. Helps in tracking project and task status..",
   "main": "app.js",
   "repository": {
     "type": "git",
