@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const path = require('path');
+const cors = require('cors');
 const express = require('express');
 const createError = require('http-errors');
 const { graphqlHTTP } = require('express-graphql');
@@ -17,21 +18,12 @@ const Schema = require('./server/schemas/schemas');
 require('./server/middlewares/utils/logger');
 require('./server/config/database');
 
-
+app.use(cors())
 // set the req body (parses the body that comes with post/put requests )
 app.use(express.json({limit: '50mb', extended: true}));
 app.use(express.urlencoded({limit: '50mb', extended: true}));
 
 
-// set headers (handling cors error)
-app.use((req, res, next) => {
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
-	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-	res.header("Accept", "application/json");
-	res.header("Access-Control-Allow-Credentials", 'true');
-	next();
-});
 
 app.use('/', graphqlHTTP({
 		schema: Schema,
