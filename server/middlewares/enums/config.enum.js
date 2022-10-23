@@ -1,0 +1,16 @@
+const Config = {
+	ADMIN: 'ADMIN',
+	CLIENT: 'CLIENT',
+	BCRYPT_SALT_RATE: 10,
+	JWT_EXPIRE_PERIOD: '6h',
+	FIELD_ROLE: 'role',
+	FIELD_VERIFIED: 'userVerified',
+	INITIATED: 'INITIATED',
+	BACKLOG: 'BACKLOG',
+	DOING: 'DOING',
+	BLOCKED: 'BLOCKED',
+	DONE: 'DONE'
+}
+
+
+module.exports = Config;
